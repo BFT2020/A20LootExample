@@ -1,0 +1,628 @@
+<config>
+<!-- ************************************************** Remove after A21  ************************************************** -->
+	<remove xpath="/lootcontainers/lootgroup/item[@name='drinkJarEmpty']"/>
+	<remove xpath="/lootcontainers/lootgroup/item[@name='drinkCanEmpty']"/>	
+
+<!-- ************************************************** Changes to Loot Probability tables and Probability  ***************** -->
+	<set xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate/qualitytemplate/loot[@quality='3']/@prob">0.45</set>
+	<set xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate/qualitytemplate/loot[@quality='4']/@prob">0.35</set>
+	<set xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate/qualitytemplate/loot[@quality='5']/@prob">0.25</set>
+	<set xpath="/lootcontainers/lootqualitytemplates/lootqualitytemplate/qualitytemplate/loot[@quality='6']/@prob">0.15</set>
+	
+	<set xpath="/lootcontainers/lootgroup[@name='groupToilet01']/item[@name='drinkJarRiverWater']/@loot_prob_template">high</set>	
+	<set xpath="/lootcontainers/lootgroup[@name='groupToilet01']/item[@name='resourcePaper']/@loot_prob_template">med</set>
+	<set xpath="/lootcontainers/lootcontainer[@name='pants']/item[@name='resourceCloth']/@prob">0.8</set>
+	<set xpath="/lootcontainers/lootcontainer[@name='shirts']/item[@name='resourceCloth']/@prob">0.8</set>
+	<set xpath="/lootcontainers/lootgroup[@name='groupBookPile01']/item[@name='resourcePaper']/@loot_prob_template">medHigh</set>	
+	<set xpath="/lootcontainers/lootgroup[@name='groupCrackabookShelves01']/item[@name='resourcePaper']/@loot_prob_template">medHigh</set>
+	<set xpath="//lootcontainers/lootgroup[@name='groupNightstand01']/item[@group='groupJunkNoBMats']/@loot_prob_template">high</set>
+	<set xpath="//lootgroup[@name='groupWeaponsMeleeScaled']/item[@group='groupWeapons_MeleeParts']/@loot_prob_template">ProbT0</set>
+	<set xpath="//lootgroup[@name='groupWeaponsMeleeScaledTPlus']/item[@group='groupWeapons_MeleeParts']/@loot_prob_template">ProbT0</set>
+	<set xpath="//lootgroup[@name='groupWeaponsMeleeScaledNoStone']/item[@group='groupWeapons_MeleeParts']/@loot_prob_template">ProbT0</set>		
+
+	<set xpath="//lootgroup[@name='groupSmallSafeLoot03']/item[@group='rareOres']/@loot_prob_template">low</set>
+	
+	<set xpath="//lootgroup[@name='groupMailbox01']/item[@group='groupMailbox02' and @loot_prob_template='ProbT1']/@loot_prob_template">ProbT0Cap</set>	
+
+	<set xpath="/lootcontainers/loot_settings/@poi_tier_bonus">3,6,15,40,50</set>	
+
+	<insertBefore xpath="/lootcontainers/lootgroup[@name='groupScrapCommon']">
+		<lootgroup name="groupClothingScraps" count="1">
+			<item name="resourceCloth" count ="1,5"/>
+			<item name="resourceScrapPolymers" count ="1,10"/>
+			<item name="resourceSewingKit" count ="1,2" loot_prob_template="low"/>
+			<item name="resourceMilitaryFiber" count ="1,5" loot_prob_template="veryLow"/>
+		</lootgroup>
+
+		<lootgroup name="groupShoesScraps" count="1">
+			<item name="resourceCloth" count ="1,5"/>
+			<item name="resourceScrapPolymers" count ="1,10"/>
+			<item name="resourceSewingKit" count ="1,2" loot_prob_template="low"/>
+			<item name="resourceMilitaryFiber" count ="1,5" loot_prob_template="veryLow"/>
+		</lootgroup>
+
+		<lootgroup name="groupArmorScrapsT0-1" count="1">
+			<item name="resourceScrapLead" count ="1,20"/>
+			<item name="resourceScrapPolymers" count ="1,10"/>
+			<item name="resourceSewingKit" count ="1,2" loot_prob_template="low"/>
+			<item name="resourceMilitaryFiber" count ="1,5" loot_prob_template="veryLow"/>
+			<item name="resourceScrapIron" count ="1,20"/>
+			<item name="resourceForgedIron" count ="1,5"/>
+			<item name="resourceForgedSteel" count ="1,5"/>
+			<item name="armorMilitarySetParts" count="2,5" loot_prob_template="ProbT1Cap"/>
+		</lootgroup>
+
+		<lootgroup name="groupArmorScrapsT2" count="1">
+			<item name="resourceScrapLead" count ="1,20"/>
+			<item name="resourceScrapPolymers" count ="1,10"/>
+			<item name="resourceSewingKit" count ="1,2" loot_prob_template="low"/>
+			<item name="resourceMilitaryFiber" count ="1,5" loot_prob_template="veryLow"/>
+			<item name="resourceScrapIron" count ="1,20"/>
+			<item name="resourceForgedIron" count ="1,5"/>
+			<item name="resourceForgedSteel" count ="1,5"/>
+			<item name="armorMilitarySetParts" count="2,5" loot_prob_template="ProbT1Cap"/>
+		</lootgroup>
+
+		<lootgroup name="groupArmorScrapsScaled">
+			<item group="groupArmorScrapsT0-1" loot_prob_template="ProbT0"/>
+			<item group="groupArmorScrapsT0-1" loot_prob_template="ProbT1"/>
+			<item group="groupArmorScrapsT2" loot_prob_template="ProbT2Cap"/>
+		</lootgroup>
+	</insertBefore>
+	
+<!-- ************************************************** Removing items and groups  ******************************************* -->
+	<remove xpath="//item[@name='foodCharredMeat']"/>
+	<remove xpath="//item[@name='foodCornMeal']"/>
+	<remove xpath="//item[@name='foodGrilledMeat']"/>
+	<remove xpath="//item[@name='thrownAmmoPipeBombSchematic']"/>
+	<remove xpath="//item[@name='thrownDynamiteSchematic']"/>
+	<remove xpath="//item[@name='thrownGrenadeSchematic']"/>
+	<remove xpath="//item[@name='thrownGrenadeContactSchematic']"/>			
+	<remove xpath="//item[@name='foodCornOnTheCobSchematic']"/>		
+	<remove xpath="//item[@name='foodGrilledMeatSchematic']"/>				
+	<remove xpath="//item[@name='foodMeatStewSchematic']"/>	
+	<remove xpath="//item[@name='foodPumpkinBreadSchematic']"/>
+	<remove xpath="//item[@name='foodPumpkinCheesecakeSchematic']"/>
+	<remove xpath="//item[@name='foodPumpkinPieSchematic']"/>
+	<remove xpath="//item[@name='foodShamChowderSchematic']"/>
+	<remove xpath="//item[@name='foodSteakAndPotatoSchematic']"/>
+	<remove xpath="//item[@name='drinkJarBeer']"/>	
+	<remove xpath="//item[@name='casinoCoin']"/>	
+	<remove xpath="//lootgroup[@name='groupIngredientsRare']/item[@name='foodEgg']"/>
+	<remove xpath="//item[@name='foodRawMeat']"/>
+	<remove xpath="//item[@name='drugFortBites']"/>
+	<remove xpath="//item[@name='drugRecog']"/>
+	<remove xpath="//item[@name='drinkJarGrandpasAwesomeSauce']"/>
+	
+	<remove xpath="//item[@group='groupWeaponsT0_Melee']"/>
+	<remove xpath="//item[@group='groupWeaponsT0_MeleeNoStone']"/>
+	<remove xpath="//item[@group='rareFoodDrink']"/>
+	<remove xpath="//item[@group='groupFoodRare']"/>
+	<remove xpath="//item[@group='perkBooks']"/>
+
+	<remove xpath="//item[contains(@group,'TurretsSyndrome')]"/>
+	<remove xpath="//item[@group='groupSafeBooks']"/>	
+	<remove xpath="//item[@group='groupTechJunkieBooks']"/>
+	<remove xpath="//item[@group='groupSavageCountryBooks']"/>
+	<remove xpath="//item[@group='groupShotgunMessiahBooks']"/>
+	<remove xpath="//item[@group='groupPopNPillsBooks']"/>
+	<remove xpath="//item[@group='perkBooksT0Day1']"/>
+
+	<remove xpath="/lootcontainers/lootgroup[@name='groupBuriedSuppliesT1']/item"/>	
+	<remove xpath="/lootcontainers/lootgroup[@name='groupBuriedWeaponChest']/item"/>	
+
+	<removeattribute xpath="/lootcontainers/lootgroup/item[contains(@name,'ammo44Magnum')]/@loot_stage_count_mod"/>	
+	<removeattribute xpath="/lootcontainers/lootgroup/item[contains(@group,'group44Magnum')]/@loot_prob_template"/>	
+	
+<!-- ************************************************** Changes to existing items  ************************************************** -->
+	<set xpath="//item[@name='drinkJarCoffee']/@name">drinkJarRiverWater</set>	
+	<set xpath="//item[@name='drinkJarYuccaJuice']/@name">drinkJarRiverWater</set>
+	<set xpath="//item[@name='drinkJarBoiledWater']/@name">drinkJarGrainAlcohol</set>
+	<set xpath="//item[@name='drinkJarGoldenRodTea']/@name">drinkJarRiverWater</set>
+	<set xpath="//item[@name='drinkJarRedTea']/@name">drinkJarRiverWater</set>		
+	<set xpath="//item[@name='resourceCropCoffeeBeans']/@name">resourceCropMoldyCoffeeBeans</set>
+	<set xpath="//item[@name='ammoGasCan']/@name">resourceBadGas</set>
+	<set xpath="//item[contains(@name,'gun') and contains(@name,'T0')]/@name">resourceMetalPipe</set>
+	<set xpath="//item[contains(@name,'meleeWpn') and contains(@name,'T0')]/@name">resourceMetalPipe</set>	
+	<set xpath="//item[@name='foodSpaghettiSchematic']/@name">foodMeatStewSchematic</set>
+	<set xpath="//item[@name='foodTunaFishGravyToastSchematic']/@name">foodPumpkinCheesecakeSchematic</set>	
+	<set xpath="//item[@name='drinkJarGrandpasAwesomeSauceSchematic']/@name">foodGameChiliSchematic</set>	
+	<set xpath="//item[@name='drinkJarGrandpasLearningElixir']/@name">foodShamChowderSchematic</set>	
+	<set xpath="//item[@name='drinkJarGrandpasMoonshine']/@name">foodPumpkinPieSchematic</set>
+	<insertAfter xpath="//item[@name='foodPumpkinPieSchematic']">
+		<item name="foodSteakAndPotatoSchematic"/>
+	</insertAfter>
+	<set xpath="//item[@name='foodFishTacosSchematic']/@name">foodPearCrispSchematic</set>	
+	<set xpath="//item[@name='foodBakedPotatoSchematic']/@name">foodPumpkinBreadSchematic</set>	
+	<set xpath="//item[@name='foodBoiledMeatSchematic']/@name">foodFishTacosSchematic</set>		
+	<set xpath="//item[@name='resourceRepairKit']/@name">resourceForgedIron</set>		
+	<set xpath="//item[@group='groupWorkingStiffsBooks']/@group">schematicsToolsCommon</set>	
+	<set xpath="//item[@name='smallEngine']/@name">engineParts</set>
+	<set xpath="//item[@name='resourceCropGoldenrodPlant']/@name">plantedGoldenrod1</set>
+	<set xpath="//item[@name='resourceCropChrysanthemumPlant']/@name">plantedChrysanthemum1</set>
+	<set xpath="//item[@name='foodCropBlueberries']/@name">plantedBlueberry1</set>
+	<set xpath="//item[@name='foodCropCorn']/@name">plantedCorn1</set>
+	<set xpath="//item[@name='foodCropPotato']/@name">plantedPotato1</set>
+	<set xpath="//item[@name='foodCropMushrooms']/@name">plantedMushroom1</set>
+	<set xpath="//item[@name='foodCropPumpkin']/@name">plantedPumpkin1</set>
+	<set xpath="//item[@name='resourceCropHopsFlower']/@name">plantedHop1</set>
+
+	<set xpath="//item[@name='engineParts']/@count">4,6</set>		
+
+	<set xpath="//item[contains(@group,'groupApparel')]/@group">groupClothingScraps</set>			
+	<set xpath="//item[@group='groupArmorScaled']/@group">groupArmorScrapsScaled</set>	
+	<set xpath="//item[@group='groupArmorScaledTPlus']/@group">groupArmorScrapsScaled</set>	
+
+	<set xpath="/lootcontainers/lootgroup[@name='groupBackpacks03']/item[@group='groupArmorT0']/@group">groupArmorScrapsT0-1</set>	
+	
+<!-- ************************************************** New Loot groups  ************************************************** -->
+<!--
+	<insertBefore xpath="/lootcontainers/lootgroup[@name='groupScrapCommon']">
+		<lootgroup name="groupClothingScraps" count="1">
+			<item name="resourceCloth" count ="1,5"/>
+			<item name="resourceScrapPolymers" count ="1,10"/>
+			<item name="resourceSewingKit" count ="1,2" loot_prob_template="low"/>
+			<item name="resourceMilitaryFiber" count ="1,5" loot_prob_template="veryLow"/>
+		</lootgroup>
+
+		<lootgroup name="groupShoesScraps" count="1">
+			<item name="resourceCloth" count ="1,5"/>
+			<item name="resourceScrapPolymers" count ="1,10"/>
+			<item name="resourceSewingKit" count ="1,2" loot_prob_template="low"/>
+			<item name="resourceMilitaryFiber" count ="1,5" loot_prob_template="veryLow"/>
+		</lootgroup>
+
+		<lootgroup name="groupArmorScrapsT0-1" count="1">
+			<item name="resourceScrapLead" count ="1,20"/>
+			<item name="resourceScrapPolymers" count ="1,10"/>
+			<item name="resourceSewingKit" count ="1,2" loot_prob_template="low"/>
+			<item name="resourceMilitaryFiber" count ="1,5" loot_prob_template="veryLow"/>
+			<item name="resourceScrapIron" count ="1,20"/>
+			<item name="resourceForgedIron" count ="1,5"/>
+			<item name="resourceForgedSteel" count ="1,5"/>
+			<item name="armorMilitarySetParts" count="2,5" loot_prob_template="ProbT1Cap"/>
+		</lootgroup>
+
+		<lootgroup name="groupArmorScrapsT2" count="1">
+			<item name="resourceScrapLead" count ="1,20"/>
+			<item name="resourceScrapPolymers" count ="1,10"/>
+			<item name="resourceSewingKit" count ="1,2" loot_prob_template="low"/>
+			<item name="resourceMilitaryFiber" count ="1,5" loot_prob_template="veryLow"/>
+			<item name="resourceScrapIron" count ="1,20"/>
+			<item name="resourceForgedIron" count ="1,5"/>
+			<item name="resourceForgedSteel" count ="1,5"/>
+			<item name="armorMilitarySetParts" count="2,5" loot_prob_template="ProbT1Cap"/>
+		</lootgroup>
+
+		<lootgroup name="groupArmorScrapsScaled">
+			<item group="groupArmorScrapsT0-1" loot_prob_template="ProbT0"/>
+			<item group="groupArmorScrapsT0-1" loot_prob_template="ProbT1"/>
+			<item group="groupArmorScrapsT2" loot_prob_template="ProbT2Cap"/>
+		</lootgroup>
+
+		<lootgroup name="groupAmmoSmallArms">
+			<item name="ammo9mmBulletBall" count="15,40"/>
+			<item name="ammo44MagnumBulletBall" count="6,19"/>
+		</lootgroup>
+
+		<lootgroup name="groupAmmoLongGunsConsumer">
+			<item name="ammo762mmBulletBall" count="6,25"/>
+			<item name="ammoShotgunShell" count="3,9"/>
+			<item name="ammo44MagnumBulletBall" count="6,19"/>
+		</lootgroup>
+
+		<lootgroup name="groupAmmoGunsMilitary">
+			<item name="ammo762mmBulletBall" count="6,25"/>
+			<item name="ammoShotgunShell" count="3,9"/>
+			<item name="ammo9mmBulletBall" count="15,40"/>
+		</lootgroup>
+
+		<lootgroup name="groupAmmoArchery">
+			<item name="ammoArrowIron" count="4,24"/>
+			<item name="ammoCrossbowBoltIron" count="3,16"/>
+			<item name="ammoArrowSteelAP" prob=".15" count="10,20"/>
+			<item name="ammoArrowFlaming" count="5,8"/>
+			<item name="ammoCrossbowBoltFlaming" count="5,8"/>
+			<item name="ammoCrossbowBoltSteelAP" prob=".15" count="6,14"/>
+			<item name="ammoArrowExploding" count="4,6"/>
+			<item name="ammoCrossbowBoltExploding" count="3,5"/>
+		</lootgroup>
+
+		<lootgroup name="groupAdvancedAmmoMilitary">
+			<item name="ammo9mmBulletBall" count="20,40"/>
+			<item name="ammo9mmBulletAP" count="20,40"/>
+			<item name="ammo9mmBulletHP" count="14,30"/>
+			<item name="ammo9mmBulletAP" count="20,40"/>
+			<item name="ammo9mmBulletHP" count="14,30"/>
+			<item name="ammo44MagnumBulletAP" count="8,19"/>
+			<item name="ammo44MagnumBulletHP" count="6,14"/>
+			<item name="ammo762mmBulletAP" count="12,25"/>
+			<item name="ammo762mmBulletHP" count="8,19"/>
+			<item name="ammoShotgunSlug" count="6,11"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsRangeWeaponsT0">
+			<item name="gunBowT1IronCrossbowSchematic"/>
+			<item name="gunBowT1WoodenBowSchematic"/>
+			<item name="gunHandgunT1PistolSchematic"/>
+			<item name="gunMGT1AK47Schematic"/>
+			<item name="gunRifleT1HuntingRifleSchematic"/>
+			<item name="gunShotgunT1DoubleBarrelSchematic"/>
+			<item name="modGunBarrelExtenderSchematic"/>
+			<item name="modGunDuckbillSchematic"/>
+			<item name="modGunFlashlightSchematic"/>
+			<item name="modGunForegripSchematic"/>
+			<item name="modGunMeleeTheHunterSchematic"/>
+			<item name="modGunRetractingStockSchematic"/>
+			<item name="modGunScopeSmallSchematic"/>
+			<item name="modGunTriggerGroupSemiSchematic"/>
+			<item name="modShotgunSawedOffBarrelSchematic"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsRangeWeaponsT1">
+			<item name="gunBotT2JunkTurretSchematic"/>
+			<item name="gunBowT3CompoundBowSchematic"/>
+			<item name="gunBowT3CompoundCrossbowSchematic"/>
+			<item name="gunHandgunT2Magnum44Schematic"/>
+			<item name="gunMGT2TacticalARSchematic"/>
+			<item name="gunRifleT2LeverActionRifleSchematic"/>
+			<item name="gunShotgunT2PumpShotgunSchematic"/>
+			<item name="modGunBipodSchematic"/>
+			<item name="modGunBowArrowRestSchematic"/>
+			<item name="modGunChokeSchematic"/>
+			<item name="modGunCrippleEmSchematic"/>
+			<item name="modGunMagazineExtenderSchematic"/>
+			<item name="modGunMuzzleBrakeSchematic"/>
+			<item name="modGunReflexSightSchematic"/>
+			<item name="modGunScopeMediumSchematic"/>
+			<item name="modGunTriggerGroupBurst3Schematic"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsRangeWeaponsT2">
+			<item name="gunExplosivesT3RocketLauncherSchematic"/>
+			<item name="gunHandgunT3DesertVultureSchematic"/>
+			<item name="gunHandgunT3SMG5Schematic"/>
+			<item name="gunMGT3M60Schematic"/>
+			<item name="gunRifleT3SniperRifleSchematic"/>
+			<item name="gunShotgunT3AutoShotgunSchematic"/>
+			<item name="modGunBowPolymerStringSchematic"/>
+			<item name="modGunLaserSightSchematic"/>
+			<item name="modGunMeleeRadRemoverSchematic"/>
+			<item name="modGunScopeLargeSchematic"/>
+			<item name="modGunSoundSuppressorSilencerSchematic"/>
+			<item name="modGunTriggerGroupAutomaticSchematic"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsRangeWeaponsCommon">
+			<item group="schematicsRangeWeaponsT0"/>
+			<item group="schematicsRangeWeaponsT1" loot_prob_template="ProbT1Cap"/>
+			<item group="schematicsRangeWeaponsT2" loot_prob_template="ProbT2Cap"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsRangeWeaponsRare">
+			<item group="schematicsRangeWeaponsT1"/>
+			<item group="schematicsRangeWeaponsT2" loot_prob_template="ProbT2Cap"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsMeleeWeaponsT0">
+			<item name="modMeleeClubBurningShaftSchematic"/>
+			<item name="modMeleeErgonomicGripSchematic"/>
+			<item name="modMeleeTemperedBladeSchematic"/>
+			<item name="modMeleeWeightedHeadSchematic"/>
+			<item name="meleeWpnBladeT1HuntingKnifeSchematic"/>
+			<item name="meleeWpnClubT1BaseballBatSchematic"/>
+			<item name="meleeWpnKnucklesT1IronKnucklesSchematic"/>
+			<item name="meleeWpnSpearT1IronSpearSchematic"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsMeleeWeaponsT1">
+			<item name="modMeleeClubBarbedWireSchematic"/>
+			<item name="modMeleeSerratedBladeSchematic"/>
+			<item name="modMeleeClubMetalSpikesSchematic"/>
+			<item name="meleeWpnBladeT3MacheteSchematic"/>
+			<item name="meleeWpnKnucklesT3SteelKnucklesSchematic"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsMeleeWeaponsCommon">
+			<item group="schematicsMeleeWeaponsT0"/>
+			<item group="schematicsMeleeWeaponsT1" loot_prob_template="ProbT1Cap"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsMoPowerT0">
+			<item name="modVehicleOffRoadHeadlightsSchematic"/>
+			<item name="gunBotT1JunkSledgeSchematic"/>
+			<item name="pressureplateSchematic"/>
+			<item name="poweredDoorsSchematic"/>
+			<item name="bladeTrapSchematic"/>
+			<item name="dartTrapSchematic"/>
+			<item name="electricfencepostSchematic"/>
+			<item name="speakerSchematic"/>
+			<item name="spotlightPlayerSchematic"/>
+			<item name="switchSchematic"/>
+			<item name="generatorbankSchematic"/>
+			<item name="batterybankSchematic"/>
+			<item name="electrictimerrelaySchematic"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsMoPowerT1">
+			<item name="modVehicleFuelSaverSchematic"/>
+			<item name="modVehicleReserveFuelTankSchematic"/>
+			<item name="meleeWpnBatonT2StunBatonSchematic"/>
+			<item name="gunBotT2JunkTurretSchematic"/>
+			<item name="motionsensorSchematic"/>
+			<item name="shotgunTurretSchematic"/>
+			<item name="autoTurretSchematic"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsMoPowerT2">
+			<item name="gunBotT3JunkDroneSchematic" loot_prob_template="med"/>
+			<item name="modRoboticDroneCargoModSchematic" loot_prob_template="med"/>
+			<item name="modRoboticDroneMedicModSchematic" loot_prob_template="med"/>
+			<item name="modRoboticDroneHeadlampModSchematic" loot_prob_template="med"/>
+			<item name="modRoboticDroneArmorPlatingModSchematic" loot_prob_template="med"/>
+			<item name="modRoboticDroneMoraleBoosterModSchematic" loot_prob_template="med"/>
+			<item name="modVehicleExpandedSeatSchematic"/>
+			<item name="modVehicleSuperChargerSchematic"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsMoPowerCommon">
+			<item group="schematicsMoPowerT0"/>
+			<item group="schematicsMoPowerT1" loot_prob_template="ProbT1Cap"/>
+			<item group="schematicsMoPowerT2" loot_prob_template="ProbT2Cap"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsMoPowerRare">
+			<item group="schematicsMoPowerT1"/>
+			<item group="schematicsMoPowerT2" loot_prob_template="ProbT2Cap"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsMedical">
+			<item name="medicalFirstAidBandageSchematic"/>
+			<item name="drugHerbalAntibioticsSchematic"/>
+			<item name="drugAntibioticsSchematic"/>
+			<item name="medicalFirstAidKitSchematic"/>
+			<item name="medicalPlasterCastSchematic"/>
+			<item name="plantedAloe1Schematic"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsArmorT0">
+			<item name="modArmorCoolingMeshSchematic"/>
+			<item name="modArmorImprovedFittingsSchematic"/>
+			<item name="modArmorInsulatedLinerSchematic"/>
+			<item name="modArmorMuffledConnectorsSchematic"/>
+			<item name="modArmorPlatingBasicSchematic"/>
+			<item name="modArmorStoragePocketSchematic"/>
+			<item name="armorIronSetSchematic" prob="medLow"/>
+			<item name="armorLeatherSetSchematic" prob="medLow"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsArmorT1">
+			<item name="modArmorBandolierSchematic"/>
+			<item name="modArmorDoubleStoragePocketSchematic"/>
+			<item name="modArmorHelmetLightSchematic"/>
+			<item name="armorIronSetSchematic"/>
+			<item name="armorLeatherSetSchematic"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsArmorT2">
+			<item name="modArmorAdvancedMuffledConnectorsSchematic"/>
+			<item name="modArmorCustomizedFittingsSchematic"/>
+			<item name="modArmorImpactBracingSchematic"/>
+			<item name="modArmorPlatingReinforcedSchematic"/>
+			<item name="modArmorTripleStoragePocketSchematic"/>
+			<item name="modArmorWaterPurifierSchematic"/>
+			<item name="resourceMilitaryFiberSchematic"/>
+			<item name="armorMilitarySetSchematic"/>
+			<item name="armorSteelSetSchematic"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsArmorCommon">
+			<item group="schematicsArmorT0"/>
+			<item group="schematicsArmorT1" loot_prob_template="ProbT1Cap"/>
+			<item group="schematicsArmorT2" loot_prob_template="ProbT2Cap"/>
+		</lootgroup>
+
+		<lootgroup name="recipesCookingT0">
+			<item name="drinkJarCoffeeSchematic"/>
+			<item name="drinkJarGoldenRodTeaSchematic"/>
+			<item name="drinkJarRedTeaSchematic"/>
+			<item name="foodBaconAndEggsSchematic"/>
+			<item name="foodBlueberryPieSchematic"/>
+			<item name="foodPumpkinBreadSchematic"/>
+			<item name="foodCornBreadSchematic"/>
+		</lootgroup>
+		<lootgroup name="recipesFarming">
+			<item name="plantedBlueberry1Schematic"/>
+			<item name="plantedChrysanthemum1Schematic"/>
+			<item name="plantedCoffee1Schematic"/>
+			<item name="plantedCorn1Schematic"/>
+			<item name="plantedCotton1Schematic"/>
+			<item name="plantedGoldenrod1Schematic"/>
+			<item name="plantedHop1Schematic"/>
+			<item name="plantedMushroom1Schematic"/>
+			<item name="plantedPotato1Schematic"/>
+			<item name="plantedPumpkin1Schematic"/>
+			<item name="plantedYucca1Schematic"/>
+			<item name="plantedGraceCorn1Schematic"/>
+		</lootgroup>
+
+		<lootgroup name="recipesCookingT1">
+			<item name="drinkJarBeerSchematic"/>
+			<item name="drinkYuccaJuiceSmoothieSchematic"/>
+			<item name="foodPumpkinPieSchematic"/>
+			<item name="foodChiliDogSchematic"/>	
+			<item name="foodFishTacosSchematic"/>
+			<item name="foodHoboStewSchematic"/>
+			<item name="foodSteakAndPotatoSchematic"/>
+			<item name="foodVegetableStewSchematic"/>
+			<item name="foodPearCrispSchematic"/>	
+		</lootgroup>
+
+		<lootgroup name="recipesCookingT2">
+			<item name="foodPumpkinCheesecakeSchematic"/>
+			<item name="foodGumboStewSchematic"/>	
+			<item name="foodShepardsPieSchematic"/>
+			<item name="foodMeatStewSchematic"/>
+			<item name="foodShamChowderSchematic"/>
+			<item name="foodGameChiliSchematic"/>		
+		</lootgroup>
+
+		<lootgroup name="recipesCookingCommon">
+			<item group="recipesCookingT0"/>
+			<item group="recipesCookingT1" loot_prob_template="ProbT1Cap"/>
+			<item group="recipesCookingT2" loot_prob_template="ProbT2Cap"/>
+		</lootgroup>
+
+		<lootgroup name="recipesCookingRare">
+			<item group="recipesCookingT1"/>
+			<item group="recipesCookingT2" loot_prob_template="ProbT2Cap"/>
+		</lootgroup>
+
+		<lootgroup name="recipesFoodCommon">
+			<item group="recipesCookingT0"/>
+			<item group="recipesFarming"/>	
+			<item group="recipesCookingT1" loot_prob_template="ProbT1Cap"/>
+			<item group="recipesCookingT2" loot_prob_template="ProbT2Cap"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsBFTToolsT0">
+			<item name="forgeSchematic"/>
+			<item name="meleeToolIronSetSchematic"/>
+			<item name="meleeToolSalvageT1WrenchSchematic"/>
+			<item name="meleeWpnBladeT1HuntingKnifeSchematic"/>
+			<item name="meleeWpnSledgeT1IronSledgehammerSchematic"/>
+			<item name="ammoGasCanSchematic"/>
+			<item name="resourceOilSchematic"/>
+			<item name="workbenchSchematic" loot_prob_template="low"/>
+		</lootgroup>
+
+		<lootgroup name="schematicsBFTToolsCommon">
+			<item group="schematicsBFTToolsT0"/>
+			<item group="schematicsToolsT1" loot_prob_template="ProbT1Cap"/>
+			<item group="schematicsToolsT2" loot_prob_template="ProbT2Cap"/>
+		</lootgroup>
+
+		<lootgroup name="groupBFTSchematicsAll">
+			<item group="schematicsVehiclesCommon" loot_prob_template="low"/>
+			<item group="schematicsRangeWeaponsCommon" loot_prob_template="low"/>
+			<item group="schematicsMeleeWeaponsCommon" loot_prob_template="low"/>
+			<item group="schematicsMoPowerCommon" loot_prob_template="med"/>
+			<item group="schematicsBFTToolsCommon" loot_prob_template="med"/>
+			<item group="schematicsMedical" loot_prob_template="med"/>
+			<item group="schematicsArmorCommon" loot_prob_template="low"/>
+			<item group="recipesFoodCommon" loot_prob_template="med"/>
+		</lootgroup>
+
+		<lootgroup name="groupWeapons_RangedParts">
+			<item name="gunMGT1AK47Parts" count="2,5"/>
+			<item name="gunHandgunT1PistolParts" count="2,5"/>
+			<item name="gunRifleT1HuntingRifleParts" count="2,5"/>
+			<item name="gunShotgunT1DoubleBarrelParts" count="2,5"/>
+			<item name="gunBowT1WoodenBowParts" count="2,5"/>
+			<item name="gunExplosivesT3RocketLauncherParts" count="2,5"/>
+		</lootgroup>
+
+		<lootgroup name="groupWeaponsExplosives">
+			<item name="thrownAmmoMolotovCocktail" count="1,3"/>
+			<item name="thrownAmmoPipeBomb" count="1,4"/>
+			<item name="thrownDynamite" count="1,3"/>
+			<item name="thrownGrenade" count="1,3"/>
+			<item name="thrownGrenadeContact" count="1,3"/>
+			<item name="thrownTimedCharge" count="1,3"/>
+			<item name="gunExplosivesT3RocketLauncherParts" count="1,4"/>
+		</lootgroup>
+
+				<lootgroup name="groupMoWeaponsParts">
+					<item name="meleeWpnBatonT2StunBatonParts" count="2,5"/>	
+				</lootgroup>
+				
+		<lootgroup name="groupIngredientsCommon">
+			<item name="plantedCoffee1" count="1,2"/>
+			<item name="plantedGoldenrod1" count="1,2"/>
+			<item name="plantedChrysanthemum1" count="1,2"/>
+			<item name="plantedBlueberry1" count="1,2"/>
+			<item name="plantedCorn1" count="1,2"/>
+			<item name="plantedYucca1" count="1,2"/>
+		</lootgroup>
+
+		<lootgroup name="groupIngredientsUncommon">
+			<item name="resourceAnimalFat" count="1,4"/>
+			<item name="plantedCorn1" count="1,2"/>
+			<item name="plantedPotato1" count="1,2"/>
+			<item name="plantedMushroom1" count="1,2"/>
+			<item name="plantedPumpkin1" count="1,2"/>
+		</lootgroup>
+
+		<lootgroup name="groupIngredientsRare">
+			<item name="resourcePotassiumNitratePowder" count="25,50"/>
+			<item name="foodRottingFlesh" count="1,4"/>
+			<item name="plantedHop1" count="1,2"/>
+		</lootgroup>
+
+		<lootgroup name="groupFoodCommon">
+			<item name="foodCanChicken"/>
+			<item name="foodCanMiso"/>
+			<item name="foodCanSoup"/>
+			<item name="foodCanPears"/>
+			<item name="foodCornMeal"/>
+			<item name="foodCanCatfood"/>
+			<item name="foodRottingFlesh"/>
+			<item name="foodShamSandwich"/>
+		</lootgroup>
+
+		<lootgroup name="groupFoodPileCommon">
+			<item name="foodCanChicken"/>
+			<item name="foodCanMiso"/>
+			<item name="foodCanSoup"/>
+			<item name="foodCanPears"/>
+			<item name="foodCanCatfood"/>
+			<item name="foodCanChili"/>
+			<item name="foodCanSham"/>
+		</lootgroup>
+
+		<lootgroup name="groupFoodUncommon">
+			<item name="foodCanBeef"/>
+			<item name="foodCanDogfood"/>
+			<item name="foodCanLamb"/>
+			<item name="foodCanPasta"/>
+			<item name="foodCanPeas"/>
+			<item name="foodCanSalmon"/>
+			<item name="foodCanStock"/>
+			<item name="foodCanTuna"/>
+		</lootgroup>
+
+		<lootgroup name="groupFoodRare">
+			<item name="plantedBlueberry1" count="2,4"/>
+			<item name="foodRottingFlesh" count="2,5"/>
+			<item name="foodCanSham" count="1,2"/>
+		</lootgroup>
+
+		<lootgroup name="groupDrinksCommon">
+			<item name="drinkJarRiverWater" />
+		</lootgroup>
+
+		<lootgroup name="groupDrinksUncommon">
+			<item name="drinkJarRiverWater"/>
+		</lootgroup>
+
+		<lootgroup name="groupDrinksRare">
+			<item name="drinkJarRiverWater"/>
+		</lootgroup>		
+				
+		<lootgroup name="groupLootChestBonusItems">
+			<item name="resourceSewingKit" count="5,10" loot_prob_template="high"/>
+			<item name="resourceLockPick" count="5,10" loot_prob_template="medHigh"/>
+			<item name="resourceAcid" count="1,2" loot_prob_template="med"/>
+			<item name="toolBeaker" count="1" loot_prob_template="medLow"/>
+			<item name="meleeToolSteelSetSchematic" count="1" loot_prob_template="low"/>
+			<item name="meleeToolPickT3AugerSchematic" count="1" loot_prob_template="veryLow"/>
+			<item name="meleeToolAxeT3ChainsawSchematic" count="1" loot_prob_template="veryLow"/>
+			<item name="meleeToolSalvageT3ImpactDriverSchematic" count="1" loot_prob_template="veryLow"/>
+			<item name="meleeToolRepairT3NailgunSchematic" count="1" loot_prob_template="veryLow"/>
+			<item name="toolForgeCrucibleSchematic" count="1" loot_prob_template="veryLow"/>
+			<item name="gunBotT2JunkTurretSchematic" count="1" loot_prob_template="veryLow"/>
+			<item group="groupAdvancedAmmoMilitary" loot_prob_template="med"/>
+		</lootgroup>			
+	</insertBefore>	
+-->
+</config>
